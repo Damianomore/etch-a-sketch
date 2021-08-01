@@ -54,3 +54,17 @@
     height: 7rem;
     
 }
+
+#B {
+    margin-bottom: 2rem;
+}
+
+.option-button {
+    margin: 1rem 0;
+    width: 95%;
+    align-self: center;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
