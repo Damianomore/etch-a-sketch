@@ -26,8 +26,8 @@
 .grid-wrapper {
     width: 40rem;
     height: 40rem;
-    border: 2.5rem solid rgb(49, 48, 48);
-    border-radius: 12px;
+    border: 2.5rem solid rgb(41, 39, 39);
+    border-radius: 5px;
 }
 .grid-container { 
 
@@ -44,7 +44,7 @@
     flex-direction: column;
     margin-right: 1rem;
     height: 45rem;
-    background-color: black;
+    background-color: rgb(41, 39, 39);
 }
 #rgb-preview {
     border: 1px solid white;
@@ -67,4 +67,5 @@
     border: 1px solid white;
     border-radius: 5px;
     font-size: 1.2rem;
+    background-color: rgb(34, 33, 33);
 }

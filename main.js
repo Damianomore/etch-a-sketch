@@ -9,7 +9,9 @@ const r = document.querySelector('#R');
 const g = document.querySelector('#G');
 const b = document.querySelector('#B');
 const rbBtn = document.querySelector('#rainbow-toggle');
-let rbToggle = false, erToggle = false, clToggle = false; 
+const erBtn = document.querySelector('#eraser-toggle');
+const clrBtn = document.querySelector('#clear-toggle');
+let rbToggle = false, erToggle = false; 
 let rVal = 0, gVal = 0, bVal = 0;
 const isHover = e => e.querySelector(':hover') === e;    
 let divList = undefined;
@@ -21,8 +23,26 @@ rbBtn.addEventListener('click', () => {
         rbToggle = false;
         return;
     }
-
+    erToggle = false;
     rbToggle = true;
+    rbBtn.style.backgroundColor = "rgb()";
+})
+
+erBtn.addEventListener('click', () => {
+    if(erToggle === true) {
+        erToggle = false;
+        return;
+    }
+    rbToggle = false;
+    erToggle = true;
+    
+})
+
+clrBtn.addEventListener('click', () => {
+    divList = document.querySelectorAll('.gridDiv');
+    divList.forEach(grid => {
+        grid.style.backgroundColor = "transparent";
+    })
 })
 
 r.addEventListener('input', () => {
@@ -65,8 +85,10 @@ function initGrid(){
 
         newDiv.addEventListener('mousemove', function checkHover() {
             if(rbToggle === true) {
-                console.log("set");
                 newDiv.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
+            }
+            else if(erToggle === true){
+                newDiv.style.backgroundColor = `transparent`;
             }
             else { 
                 const hovered = isHover(newDiv);
